@@ -29,10 +29,10 @@ body {
 	width: 200px;
 	line-height: 50px;
 	margin: 0 auto;
-	border: 1px solid #777;
+	border: 1px solid #000000;
 	text-align: center;
-	color: #777;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #000000;
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 25px;
 	border-radius: 10px;
 	font-weight: 200;
