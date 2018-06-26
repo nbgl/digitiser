@@ -13,6 +13,13 @@ def home():
     resp.headers['Expires'] = '0'
     return resp
 
+@socketio.on_error_default
+def default_error_handler(e):
+    print(e)
+
+@socketio.on('message')
+def handle_string(string):
+    print('received string: ' + str(string))
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
