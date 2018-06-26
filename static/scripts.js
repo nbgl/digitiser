@@ -48,8 +48,7 @@ document.addEventListener('gesturestart', function (e) {
   };
 
   window.onmouseup = window.ontouchend = window.ontouchcancel = function(e) {
-//insert askForPrediction code
-//insert sendImageToServer code
+    askForPrediction();
     mouseDown = false;
   };
 
@@ -91,11 +90,15 @@ document.addEventListener('gesturestart', function (e) {
   };
 
   const askForPrediction = function() {
-//insert askForPrediction function
+    sendImageToServer();
   };
 
   const sendImageToServer = function() {
-//insert sendImageToServer function
+    var canvas = document.getElementById('draw-canvas');
+    var dataURL = canvas.toDataURL();
+    //use console on the webpage to check the link
+    console.log(dataURL);
+    //send this to Tina via Gabriel's communication
   };
 
 
