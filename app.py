@@ -3,6 +3,7 @@ from flask_socketio import SocketIO
 from keras.models import model_from_json
 import base64
 import io
+from PIL import Image
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -33,9 +34,10 @@ def predict_from_image(image):
     print (image)
     bytes = base64.b64decode(image)
 
-    imageData = base64.b64decode
-    image = image.open(io.BytesIO(image_data))
-    image.show()
+    image_data = base64.b64decode(image)
+    image_2 = Image.open(io.BytesIO(image_data))
+    pix = numpy.Array(image_2)
+
 
 
 
