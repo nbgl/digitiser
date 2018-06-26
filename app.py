@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 from flask_socketio import SocketIO
 from keras.models import model_from_json
 import base64
@@ -29,7 +29,7 @@ def default_error_handler(e):
 
 @socketio.on('message')
 def handle_string(string):
-    socketio.emit('result', predict_from_image(string))
+    socketio.emit('result', predict_from_image(string), room=request.sid)
 
 def predict_from_image(image):
 
