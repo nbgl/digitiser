@@ -4,6 +4,7 @@ from keras.models import model_from_json
 import base64
 import io
 from PIL import Image
+import numpy
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -23,20 +24,22 @@ def default_error_handler(e):
 
 @socketio.on('message')
 def handle_string(string):
-    print('received string: ' + str(string))
+    predict_from_image(string)
     socketio.emit('result', 10)
 
 def predict_from_image(image):
     with open ('model.json','r') as f:
         model = model_from_json(f.read())
     model.load_weights('weights.h5')
-    image = image[23:]
-    print (image)
+    image = image[22:]
     bytes = base64.b64decode(image)
 
     image_data = base64.b64decode(image)
     image_2 = Image.open(io.BytesIO(image_data))
-    pix = numpy.Array(image_2)
+    image_2.thumbnail((28,28))
+    pix = numpy.array(image_2)
+    pix = pix[:,:,3].reshape(1,28,28,1)/255
+    print (pix)
 
 
 
