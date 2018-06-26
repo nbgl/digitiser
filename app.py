@@ -13,5 +13,13 @@ def home():
     return resp
 
 
+def predict_from_image(image):
+    from keras.models import model_from_json
+    with open ('model.json','r') as f:
+            model = model_from_json(f.read())
+    model.load_weights('weights.h5')
+
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
