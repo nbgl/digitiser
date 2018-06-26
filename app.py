@@ -27,6 +27,8 @@ def predict_from_image(image):
     with open ('model.json','r') as f:
         model = model_from_json(f.read())
     model.load_weights('weights.h5')
+    image = image[23:]
+    print (image)
 
 
 
