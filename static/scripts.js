@@ -5,6 +5,12 @@ socket.on('connect', function() {
   socket.emit('message', "I'm connected!");
 });
 
+socket.on('result', function(number) {
+  number = number.toString();
+  console.log(number);
+  displayNumber(number);
+});
+
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });
