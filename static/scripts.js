@@ -96,9 +96,8 @@ document.addEventListener('gesturestart', function (e) {
   const sendImageToServer = function() {
     var canvas = document.getElementById('draw-canvas');
     var dataURL = canvas.toDataURL();
-    //use console on the webpage to check the link
     console.log(dataURL);
-    //send this to Tina via Gabriel's communication
+    socket.emit('message', dataURL);
   };
 
 
