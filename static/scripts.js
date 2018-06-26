@@ -54,9 +54,9 @@ document.addEventListener('gesturestart', function (e) {
 
   const redraw = function() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-    
-    context.lineJoin = 'round';
-    context.lineCap = 'round';
+
+    context.lineJoin = 'triangle';
+    context.lineCap = 'triangle';
     context.strokeStyle = COLOR;
     context.fillStyle = COLOR;
     context.lineWidth = WIDTH;
