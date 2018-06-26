@@ -16,6 +16,7 @@ document.addEventListener('gesturestart', function (e) {
 });
 const displayNumber = function(number) {
   console.log(number);
+  document.getElementById('number').innerHTML = number;
 };
 (function() {
   //variables
