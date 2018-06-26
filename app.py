@@ -24,8 +24,7 @@ def default_error_handler(e):
 
 @socketio.on('message')
 def handle_string(string):
-    predict_from_image(string)
-    socketio.emit('result', 10)
+    socketio.emit('result', predict_from_image(string))
 
 def predict_from_image(image):
     with open ('model.json','r') as f:
@@ -39,7 +38,14 @@ def predict_from_image(image):
     image_2.thumbnail((28,28))
     pix = numpy.array(image_2)
     pix = pix[:,:,3].reshape(1,28,28,1)/255
-    print (pix)
+    prediction = model.predict(pix)
+    prediction = prediction.reshape(-1)
+    prediction = int(numpy.argmax(prediction))
+    return prediction
+
+
+
+
 
 
 
