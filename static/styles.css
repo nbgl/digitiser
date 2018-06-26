@@ -37,3 +37,13 @@ body {
 	border-radius: 10px;
 	font-weight: 200;
 }
+
+#display-number {
+	width:280px;
+	height:100px;
+	border:1px solid #000;
+	margin-top: 10px;
+	margin-left: 20px;
+	text-align: center;
+
+}

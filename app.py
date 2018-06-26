@@ -1,5 +1,6 @@
 from flask import Flask, render_template, Response
 from flask_socketio import SocketIO
+from keras.models import model_from_json
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -22,7 +23,6 @@ def handle_string(string):
     print('received string: ' + str(string))
 
 def predict_from_image(image):
-    from keras.models import model_from_json
     with open ('model.json','r') as f:
             model = model_from_json(f.read())
     model.load_weights('weights.h5')
