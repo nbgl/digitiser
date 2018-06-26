@@ -14,16 +14,10 @@ socket.on('result', function(number) {
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });
-
-document.addEventListener('scroll', function (e) {
-  e.preventDefault();
-});
-
 const displayNumber = function(number) {
   console.log(number);
   document.getElementById('number').innerHTML = number;
 };
-
 (function() {
   //variables
   const SCALE = 2;
