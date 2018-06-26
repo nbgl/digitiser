@@ -1,6 +1,8 @@
 from flask import Flask, render_template, Response
 from flask_socketio import SocketIO
 from keras.models import model_from_json
+import base64
+import io
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -27,6 +29,17 @@ def predict_from_image(image):
     with open ('model.json','r') as f:
         model = model_from_json(f.read())
     model.load_weights('weights.h5')
+    image = image[23:]
+    print (image)
+    bytes = base64.b64decode(image)
+
+    imageData = base64.b64decode
+    image = image.open(io.BytesIO(image_data))
+    image.show()
+
+
+
+
 
 
 
