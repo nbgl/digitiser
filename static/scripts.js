@@ -14,7 +14,9 @@ socket.on('result', function(number) {
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });
-
+const displayNumber = function(number) {
+  console.log(number);
+};
 (function() {
   //variables
   const SCALE = 2;
@@ -105,6 +107,8 @@ document.addEventListener('gesturestart', function (e) {
     console.log(dataURL);
     socket.emit('message', dataURL);
   };
+
+
 
 
 })();
