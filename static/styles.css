@@ -45,5 +45,9 @@ body {
 	margin-top: 10px;
 	margin-left: 20px;
 	text-align: center;
+}
 
+#number {
+	font-size: 25px;
+	text-align: center;
 }
