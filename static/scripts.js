@@ -68,6 +68,7 @@ const displayNumber = function(number) {
     mouseDown = false;
     paths = new Array();
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    document.getElementById('number').innerHTML = "";
   };
 
   const redraw = function() {
