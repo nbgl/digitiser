@@ -21,7 +21,7 @@ def default_error_handler(e):
 @socketio.on('message')
 def handle_string(string):
     print('received string: ' + str(string))
-    predict_from_image(string)
+    socketio.emit('result', 10)
 
 def predict_from_image(image):
     with open ('model.json','r') as f:
