@@ -4,10 +4,10 @@ bleach==1.5.0
 click==6.7
 eventlet==0.23.0
 Flask==1.0.2
-gast==0.2.0
-grpcio==1.12.1
 Flask-SocketIO==3.0.1
+gast==0.2.0
 greenlet==0.4.13
+grpcio==1.12.1
 gunicorn==19.8.1
 h5py==2.8.0
 html5lib==0.9999999
@@ -18,11 +18,11 @@ Keras-Applications==1.0.2
 Keras-Preprocessing==1.0.1
 Markdown==2.6.11
 MarkupSafe==1.0
+numpy==1.14.5
+Pillow==5.1.0
+protobuf==3.6.0
 python-engineio==2.1.1
 python-socketio==1.9.0
-six==1.11.0
-numpy==1.14.5
-protobuf==3.6.0
 PyYAML==3.12
 scipy==1.1.0
 six==1.11.0
