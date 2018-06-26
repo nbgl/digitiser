@@ -2,6 +2,7 @@
 	<head>
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="pragma" content="no-cache">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js" integrity="sha256-pMea2a/7QK1RhYpSh7rIpKSajxu4j61VmpJCJ31KrfA=" crossorigin="anonymous"></script>
 		<script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
 		<meta name="viewport" content="width=320">
@@ -9,6 +10,19 @@
 
 	<body>
 		<canvas id="draw-canvas" width="560" height="560"></canvas>
+		<script>
+
+			var canvas = document.getElementById('draw-canvas');
+			var dataURL = canvas.toDataURL();
+			//use console on the webpage to check the link
+			console.log(dataURL);
+			//send this to Tina via Gabriel's communication
+		</script>
+
+
+
+
+
 		<div id="clear-button">Clear</div>
 	</body>
 </html>

@@ -1,10 +1,16 @@
 'use strict';
 
+var socket = io.connect('http://' + document.domain + ':' + location.port);
+socket.on('connect', function() {
+  socket.emit('message', "I'm connected!");
+});
+
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });
 
 (function() {
+  //variables
   const SCALE = 2;
   const COLOR = '#000';
   const WIDTH = 40;
@@ -42,6 +48,8 @@ document.addEventListener('gesturestart', function (e) {
   };
 
   window.onmouseup = window.ontouchend = window.ontouchcancel = function(e) {
+//insert askForPrediction code
+//insert sendImageToServer code
     mouseDown = false;
   };
 
@@ -54,11 +62,14 @@ document.addEventListener('gesturestart', function (e) {
 
   const redraw = function() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-
-    context.lineJoin = 'triangle';
-    context.lineCap = 'triangle';
+  //brush settings
+    //brush size
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+    //brush colour
     context.strokeStyle = COLOR;
     context.fillStyle = COLOR;
+    //brush width
     context.lineWidth = WIDTH;
 
     for (const path of paths) {
@@ -78,4 +89,14 @@ document.addEventListener('gesturestart', function (e) {
       }
     }
   };
+
+  const askForPrediction = function() {
+//insert askForPrediction function
+  };
+
+  const sendImageToServer = function() {
+//insert sendImageToServer function
+  };
+
+
 })();
