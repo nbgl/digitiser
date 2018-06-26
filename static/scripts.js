@@ -57,8 +57,10 @@ const displayNumber = function(number) {
   };
 
   window.onmouseup = window.ontouchend = window.ontouchcancel = function(e) {
-    askForPrediction();
-    mouseDown = false;
+    if (mouseDown) {
+      askForPrediction();
+      mouseDown = false;
+    }
   };
 
   const clearButton = document.getElementById('clear-button');
