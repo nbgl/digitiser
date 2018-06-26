@@ -2,8 +2,7 @@
 
 var socket = io.connect('http://' + document.domain + ':' + location.port);
 socket.on('connect', function() {
-  socket.emit('my event', {data: 'I\'m connected!'});
-  console.log(socket);
+  socket.emit('message', "I'm connected!");
 });
 
 document.addEventListener('gesturestart', function (e) {
