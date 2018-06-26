@@ -9,6 +9,11 @@ import numpy
 app = Flask(__name__)
 socketio = SocketIO(app)
 
+with open ('model.json','r') as f:
+    model = model_from_json(f.read())
+model.load_weights('weights.h5')
+model._make_predict_function()
+
 @app.route('/')
 def home():
     resp = Response(render_template('home.html'))
@@ -27,9 +32,7 @@ def handle_string(string):
     socketio.emit('result', predict_from_image(string))
 
 def predict_from_image(image):
-    with open ('model.json','r') as f:
-        model = model_from_json(f.read())
-    model.load_weights('weights.h5')
+
     image = image[22:]
     bytes = base64.b64decode(image)
 
