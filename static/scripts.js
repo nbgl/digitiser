@@ -1,5 +1,10 @@
 'use strict';
 
+var socket = io.connect('http://' + document.domain + ':' + location.port);
+socket.on('connect', function() {
+  socket.emit('message', "I'm connected!");
+});
+
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });

@@ -1,7 +1,8 @@
 from flask import Flask, render_template, Response
+from flask_socketio import SocketIO
 
 app = Flask(__name__)
-
+socketio = SocketIO(app)
 
 @app.route('/')
 def home():
@@ -12,6 +13,13 @@ def home():
     resp.headers['Expires'] = '0'
     return resp
 
+@socketio.on_error_default
+def default_error_handler(e):
+    print(e)
+
+@socketio.on('message')
+def handle_string(string):
+    print('received string: ' + str(string))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    socketio.run(app, debug=True)
