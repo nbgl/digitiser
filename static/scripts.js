@@ -22,6 +22,11 @@ socket.on('result', function(number) {
   displayNumber(number);
 });
 
+socket.on('error', function(message) {
+  console.log(message)
+  document.getElementById('number').innerHTML = message;
+});
+
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });
