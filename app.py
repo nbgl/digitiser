@@ -47,7 +47,7 @@ def predict_from_image(image):
     prediction = prediction.reshape(-1)
     print (prediction)
     for output in prediction:
-        if output > 0.997:
+        if output > 0:
             return int(numpy.argmax(prediction))
 
     return -1
