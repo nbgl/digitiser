@@ -52,14 +52,31 @@ body {
 	text-align: center;
 }
 
+#passcode {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+#passcode-1 {
+	font-size: 25px;
+}
+#passcode-2 {
+	font-size: 25px;
+}
+#passcode-3 {
+	font-size: 25px;
+}
+#passcode-4 {
+	font-size: 25px;
+}
+
 .digit-one {
 	width: 68px;
 	height: 68px;
 	border:1px solid #000;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: 20px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
 
@@ -67,10 +84,9 @@ body {
 	width: 68px;
 	height: 68px;
 	border:1px solid #000;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: 1px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
 
@@ -78,10 +94,9 @@ body {
 	width: 68px;
 	height: 68px;
 	border:1px solid #000;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: 1px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
 
@@ -89,9 +104,8 @@ body {
 	width: 68px;
 	height: 68px;
 	border:1px solid #000;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: 1px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
