@@ -51,3 +51,47 @@ body {
 	font-size: 25px;
 	text-align: center;
 }
+
+.digit-one {
+	width: 68px;
+	height: 68px;
+	border:1px solid #000;
+	margin-top: 10px;
+	margin-left: 20px;
+	text-align: center;
+	font-size: 25px;
+	float: left;
+}
+
+.digit-two {
+	width: 68px;
+	height: 68px;
+	border:1px solid #000;
+	margin-top: 10px;
+	margin-left: 1px;
+	text-align: center;
+	font-size: 25px;
+	float: left;
+}
+
+.digit-three {
+	width: 68px;
+	height: 68px;
+	border:1px solid #000;
+	margin-top: 10px;
+	margin-left: 1px;
+	text-align: center;
+	font-size: 25px;
+	float: left;
+}
+
+.digit-four {
+	width: 68px;
+	height: 68px;
+	border:1px solid #000;
+	margin-top: 10px;
+	margin-left: 1px;
+	text-align: center;
+	font-size: 25px;
+	float: left;
+}
