@@ -7,9 +7,18 @@ socket.on('connect', function() {
 var list = [];
 
 
+
 socket.on('result', function(number) {
   number = number.toString();
   console.log(number);
+  if (list.length==4){
+    list = [];
+    document.getElementById('passcode-1').innerHTML = "";
+    document.getElementById('passcode-2').innerHTML = "";
+    document.getElementById('passcode-3').innerHTML = "";
+    document.getElementById('passcode-4').innerHTML = "";
+  }
+  list.push(number);
   displayNumber(number);
 });
 
@@ -19,6 +28,9 @@ document.addEventListener('gesturestart', function (e) {
 const displayNumber = function(number) {
   console.log(number);
   document.getElementById('number').innerHTML = number;
+  for (var i = 0; i < list.length; i++) {
+  document.getElementById('passcode-'+(i+1).toString()).innerHTML = list[i];
+  }
 };
 (function() {
   //variables

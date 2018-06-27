@@ -57,6 +57,19 @@ body {
 	margin-top: 10px;
 }
 
+#passcode-1 {
+	font-size: 25px;
+}
+#passcode-2 {
+	font-size: 25px;
+}
+#passcode-3 {
+	font-size: 25px;
+}
+#passcode-4 {
+	font-size: 25px;
+}
+
 .digit-one {
 	width: 68px;
 	height: 68px;
@@ -64,7 +77,6 @@ body {
 	margin-top: 20px;
 	margin-left: 20px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
 
@@ -75,7 +87,6 @@ body {
 	margin-top: 20px;
 	margin-left: 1px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
 
@@ -86,7 +97,6 @@ body {
 	margin-top: 20px;
 	margin-left: 1px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
 
@@ -97,6 +107,5 @@ body {
 	margin-top: 20px;
 	margin-left: 1px;
 	text-align: center;
-	font-size: 25px;
 	float: left;
 }
