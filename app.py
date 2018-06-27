@@ -29,7 +29,9 @@ def default_error_handler(e):
 
 @socketio.on('message')
 def handle_string(string):
-    socketio.emit('result', predict_from_image(string), room=request.sid)
+    result = predict_from_image(string)
+    if result != -1:
+        socketio.emit('result', predict_from_image(string), room=request.sid)
 
 def predict_from_image(image):
 
@@ -43,8 +45,12 @@ def predict_from_image(image):
     pix = pix[:,:,3].reshape(1,28,28,1)/255
     prediction = model.predict(pix)
     prediction = prediction.reshape(-1)
-    prediction = int(numpy.argmax(prediction))
-    return prediction
+    print (prediction)
+    for output in prediction:
+        if output > 0.9999:
+            return int(numpy.argmax(prediction))
+
+    return -1
 
 
 
