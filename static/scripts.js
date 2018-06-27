@@ -4,6 +4,8 @@ var socket = io.connect('http://' + document.domain + ':' + location.port);
 socket.on('connect', function() {
   socket.emit('message', "I'm connected!");
 });
+var list = [];
+
 
 socket.on('result', function(number) {
   number = number.toString();
