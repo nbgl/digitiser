@@ -32,6 +32,8 @@ def handle_string(string):
     result = predict_from_image(string)
     if result != -1:
         socketio.emit('result', predict_from_image(string), room=request.sid)
+    else:
+        socketio.emit('error', 'No number detected', room=request.sid)
 
 def predict_from_image(image):
 
